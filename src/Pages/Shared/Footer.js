@@ -1,12 +1,12 @@
 import { Typography } from "@mui/material";
 import React from "react";
 
-const Home = () => {
+const Footer = () => {
     return (
         <div>
-            <Typography>Home</Typography>
+            <Typography>Footer</Typography>
         </div>
     );
 };
 
-export default Home;
+export default Footer;

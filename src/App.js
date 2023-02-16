@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
+import { useContext } from "react";
+import { RouterProvider } from "react-router-dom";
+import { ColorModeContext } from "./Context/ColorModeContext";
+import router from "./Routes/Routes/Routes";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { theme } = useContext(ColorModeContext);
+    return (
+        <Box>
+            <ThemeProvider theme={theme}>
+                <RouterProvider router={router}></RouterProvider>
+                <CssBaseline />
+            </ThemeProvider>
+        </Box>
+    );
 }
 
 export default App;
